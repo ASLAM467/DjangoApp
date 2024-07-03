@@ -23,6 +23,13 @@ spec:
               memory: 350Mi
           ports:
             - containerPort: 8000
+          volumeMounts:
+            - mountPath: "/app/data"
+              name: django-storage
+      volumes:
+        - name: django-storage
+          persistentVolumeClaim:
+            claimName: django-pvc
 ---
 apiVersion: v1
 kind: Service
