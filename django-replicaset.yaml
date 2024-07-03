@@ -26,6 +26,17 @@ spec:
           volumeMounts:
             - mountPath: "/app/data"
               name: django-storage
+          env:
+            - name: MYSQL_HOST
+              value: mysql
+            - name: MYSQL_PORT
+              value: "3306"
+            - name: MYSQL_DATABASE
+              value: django_db
+            - name: MYSQL_USER
+              value: django_user
+            - name: MYSQL_PASSWORD
+              value: django_password
       volumes:
         - name: django-storage
           persistentVolumeClaim:
