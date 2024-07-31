@@ -19,6 +19,6 @@ from django.urls import path
 from demo_app import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('/demo1', views.Index.as_view()),
+    path('app1/admin/', admin.site.urls),
+    path('app1/demo', views.Index.as_view()),
 ]
